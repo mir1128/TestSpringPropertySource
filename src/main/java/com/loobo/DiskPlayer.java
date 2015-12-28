@@ -7,11 +7,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class DiskPlayer {
 
-    @Value("${disc.artist}")
     private String player;
 
     @Autowired
-    public DiskPlayer(@Value("${disc.artist}") String player) {
+    public DiskPlayer(@Value("#{cdPlayer.play()}") String player) {
         this.player = player;
     }
 

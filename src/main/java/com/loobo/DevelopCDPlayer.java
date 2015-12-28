@@ -8,7 +8,8 @@ public class DevelopCDPlayer implements CDPlayer{
         this.player = player;
     }
 
-    public void play() {
+    public String play() {
         System.out.println(String.format("%s plays.", player));
+        return "this is cd player";
     }
 }

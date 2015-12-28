@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
+import org.springframework.core.env.SystemEnvironmentPropertySource;
 
 @Configuration
 @PropertySource("classpath:application.properties")
@@ -16,14 +17,10 @@ public class DevelopmentProfileConfig {
     @Autowired
     Environment env;
 
-//    @Bean
-//    public CDPlayer cdPlayer() {
-//        for (String s : env.getActiveProfiles()) {
-//            System.out.println(s);
-//        }
-//
-//        return new DevelopCDPlayer(env.getProperty("disc.artist"));
-//    }
+    @Bean
+    public CDPlayer cdPlayer() {
+        return new DevelopCDPlayer("hello");
+    }
 
     @Bean
     public PropertySourcesPlaceholderConfigurer placeholderConfigurer() {

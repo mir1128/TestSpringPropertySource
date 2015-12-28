@@ -23,17 +23,17 @@ public class CDPlayerTest {
         systemOutRule.enableLog();
     }
 
-//    @Autowired
-//    CDPlayer cdPlayer;
+    @Autowired
+    CDPlayer cdPlayer;
 
     @Autowired
     DiskPlayer diskPlayer;
 
-//    @Test
-//    public void develop_cd_player_should_be_used() throws Exception {
-//        cdPlayer.play();
-//        assertEquals(systemOutRule.getLog(), "9527 plays.\n");
-//    }
+    @Test
+    public void develop_cd_player_should_be_used() throws Exception {
+        cdPlayer.play();
+        assertEquals(systemOutRule.getLog(), "9527 plays.\n");
+    }
 
     @Test
     public void disk_player_should_play() throws Exception {
